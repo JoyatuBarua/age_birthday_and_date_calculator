@@ -38,4 +38,13 @@ void main() {
     expect(nextBirthDay.inMonths, 4);
     expect(nextBirthDay.inDays, 10);
   });
+
+  test('Calculate Next Birthday', () {
+    NextBirthDay nextBirthDay = NextBirthDay(
+      birthDateTime: currentDateTime,
+      currentDateTime: currentDateTime,
+    );
+    expect(nextBirthDay.inMonths, 12);
+    expect(nextBirthDay.inDays, 0);
+  });
 }
