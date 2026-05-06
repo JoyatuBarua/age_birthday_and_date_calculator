@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: .start,
           children: [
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Container(
               padding: .all(10),
               width: ageCardWidth,
@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Row(
                 mainAxisAlignment: .spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Date of Birth: ",
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Container(
               padding: .all(10),
               width: ageCardWidth,
@@ -122,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Row(
                 mainAxisAlignment: .spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Current Date: ",
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
@@ -136,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -160,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: .start,
                 crossAxisAlignment: .center,
                 children: [
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   SizedBox(
                     child: Row(
                       mainAxisAlignment: .spaceEvenly,
@@ -170,7 +170,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: Column(
                             crossAxisAlignment: .start,
                             children: [
-                              Text(
+                              const Text(
                                 "Age",
                                 style: TextStyle(
                                   fontSize: 40,
@@ -191,8 +191,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(width: 10),
-                                  Text(
+                                  const SizedBox(width: 10),
+                                  const Text(
                                     "years",
                                     style: TextStyle(
                                       fontSize: 18,
@@ -234,7 +234,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: Column(
                             crossAxisAlignment: .center,
                             children: [
-                              Text(
+                              const Text(
                                 "Next Birthday",
                                 style: TextStyle(
                                   fontSize: 18,
@@ -252,7 +252,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     115,
                                     34,
                                   ),
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.cake_sharp,
                                     size: 30,
                                     color: Colors.white,
@@ -273,7 +273,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Container(
                     width: ageCardWidth * .95,
                     height: 2,
@@ -290,22 +290,22 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     "Details",
                     style: TextStyle(
                       fontSize: 20,
                       color: const Color.fromARGB(255, 255, 115, 34),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: .spaceEvenly,
                     children: [
                       Column(
                         mainAxisAlignment: .center,
                         children: [
-                          Text(
+                          const Text(
                             "Years",
                             style: TextStyle(fontSize: 16, color: Colors.white),
                           ),
@@ -313,8 +313,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             dateCalculate.inYears.toString(),
                             style: TextStyle(fontSize: 18, color: Colors.white),
                           ),
-                          SizedBox(height: 10),
-                          Text(
+                          const SizedBox(height: 10),
+                          const Text(
                             "Days",
                             style: TextStyle(fontSize: 16, color: Colors.white),
                           ),
@@ -327,7 +327,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Column(
                         mainAxisAlignment: .center,
                         children: [
-                          Text(
+                          const Text(
                             "Months",
                             style: TextStyle(fontSize: 16, color: Colors.white),
                           ),
@@ -335,8 +335,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             dateCalculate.inMonths.toString(),
                             style: TextStyle(fontSize: 18, color: Colors.white),
                           ),
-                          SizedBox(height: 10),
-                          Text(
+                          const SizedBox(height: 10),
+                          const Text(
                             "Hours",
                             style: TextStyle(fontSize: 16, color: Colors.white),
                           ),
@@ -349,7 +349,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Column(
                         mainAxisAlignment: .center,
                         children: [
-                          Text(
+                          const Text(
                             "Weeks",
                             style: TextStyle(fontSize: 16, color: Colors.white),
                           ),
@@ -357,8 +357,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             dateCalculate.inWeeks.toString(),
                             style: TextStyle(fontSize: 18, color: Colors.white),
                           ),
-                          SizedBox(height: 10),
-                          Text(
+                          const SizedBox(height: 10),
+                          const Text(
                             "Minutes",
                             style: TextStyle(fontSize: 16, color: Colors.white),
                           ),
