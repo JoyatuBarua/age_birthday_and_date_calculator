@@ -1,3 +1,4 @@
+/// Method for calculating year, month, week, remaining day, day, hour, minute, second for different birth and current year
 String calculateYearMonthWeekRemainingdayDayHourMinuteSecondsForDifferentYears(
   DateTime birthDateTime,
   DateTime currentDateTime,
@@ -20,7 +21,8 @@ String calculateYearMonthWeekRemainingdayDayHourMinuteSecondsForDifferentYears(
     ).day;
 
     // print("days in previous month $daysInPrevMonth");
-    durationInDays += daysInPrevMonth;
+    durationInDays +=
+        daysInPrevMonth; // durationInDays indicates total number of days if week is not counted
   }
 
   // if currentMonth is before/less than birthMonth
@@ -33,7 +35,9 @@ String calculateYearMonthWeekRemainingdayDayHourMinuteSecondsForDifferentYears(
   Duration difference = currentDateTime.difference(birthDateTime);
 
   int weeks = (durationInDays / 7).floor();
-  int remainingDays = durationInDays % 7;
+  int remainingDays =
+      durationInDays %
+      7; // remainingDays indicates days left after week is counted
 
   // print(
   //   'duration in days $durationInDays remaining weeks $weeks remaining days $remainingDays',
@@ -46,7 +50,8 @@ String calculateYearMonthWeekRemainingdayDayHourMinuteSecondsForDifferentYears(
   return "$durationInYears $durationInMonths $weeks $remainingDays $durationInDays $totalHours $totalMinutes $totalSeconds";
 }
 
-String calculateMonthWeekRemainingdayDayHourMinuteSecondsForSameYears(
+/// Method for calculating month, week, remaining day, day, hour, minute, second for the same birth and current year
+String calculateMonthWeekRemainingdayDayHourMinuteSecondForSameYears(
   DateTime birthDateTime,
   DateTime currentDateTime,
 ) {
@@ -55,20 +60,23 @@ String calculateMonthWeekRemainingdayDayHourMinuteSecondsForSameYears(
 
   // if currentDay is before/less than birthDay
   if (durationInDays < 0) {
-    //
     durationInMonths--;
     int daysInPrevMonth = DateTime(
       currentDateTime.year,
       currentDateTime.month,
       0,
     ).day;
-    durationInDays += daysInPrevMonth;
+    durationInDays +=
+        daysInPrevMonth; // durationInDays indicates total number of days if week is not counted
   }
 
   Duration totalDuration = currentDateTime.difference(birthDateTime);
-  // int totalDays = totalDuration.inDays;
+
   int weeks = (durationInDays / 7).floor();
-  int remainingDays = durationInDays % 7;
+
+  int remainingDays =
+      durationInDays %
+      7; // remainingDays indicates days left after week is counted
 
   int totalHours = totalDuration.inHours;
   int totalMinutes = totalDuration.inMinutes;
@@ -79,6 +87,7 @@ String calculateMonthWeekRemainingdayDayHourMinuteSecondsForSameYears(
   return "$durationInMonths $weeks $durationInDays $remainingDays $totalHours $totalMinutes $totalSeconds";
 }
 
+/// Method for calculating duration
 String calculateDuration(
   int yearDifference,
   String age,
@@ -98,7 +107,7 @@ String calculateDuration(
 
     if (birthMonth == currentMonth) {
       String monthWeekDayHourMinuteSeconds =
-          calculateMonthWeekRemainingdayDayHourMinuteSecondsForSameYears(
+          calculateMonthWeekRemainingdayDayHourMinuteSecondForSameYears(
             birthDateTime,
             currentDateTime,
           );
@@ -108,7 +117,7 @@ String calculateDuration(
     }
 
     String monthWeekRemainingdayDayHourMinuteSeconds =
-        calculateMonthWeekRemainingdayDayHourMinuteSecondsForSameYears(
+        calculateMonthWeekRemainingdayDayHourMinuteSecondForSameYears(
           birthDateTime,
           currentDateTime,
         );
@@ -131,18 +140,36 @@ String calculateDuration(
   return age;
 }
 
+///  Class used for getting duration between dates
 class DateCalculate {
+  /// First Date
   DateTime firstDateTime;
+
+  /// Second Date
   DateTime secondDateTime;
 
+  /// Date duration in total years
   int inYears = 0;
+
+  /// Date duration in total months
   int inMonths = 0;
+
+  /// Date duration in total weeks
   int inWeeks = 0;
+
+  /// Date duration in total days
   int inDays = 0;
+
+  /// Date duration in total hours
   int inHours = 0;
+
+  /// Date duration in total minutes
   int inMinutes = 0;
+
+  /// Date duration in total seconds
   int inSeconds = 0;
 
+  /// Constructor of DateCalculate class with two required parameters
   DateCalculate({required this.firstDateTime, required this.secondDateTime}) {
     late DateTime? temp;
     if (firstDateTime.isAfter(secondDateTime)) {
@@ -182,20 +209,42 @@ class DateCalculate {
   }
 }
 
+///  Class used for getting age beween birth and current date
 class Age {
+  /// Birth Date
   final DateTime birthDateTime;
+
+  /// Current Date
   final DateTime currentDateTime;
+
+  /// Age in years
   int inYears = 0;
+
+  /// Age in months
   int inMonths = 0;
+
+  /// Age in weeks
   int inWeeks = 0;
+
+  /// Age in days(when week is not considered)
   int inDays = 0;
+
+  /// Age in days remaining after week is considered/count
   int inRemainingDays = 0;
 
+  /// Current Year
   int get currentYear => currentDateTime.year;
+
+  /// Birth Year
   int get birthYear => birthDateTime.year;
+
+  /// Current Month
   int get currentMonth => currentDateTime.month;
 
+  /// Stores duration between two dates in a String format
   String duration = '';
+
+  /// Constructor of Age class with two required parameters
   Age({required this.birthDateTime, required this.currentDateTime}) {
     duration = calculateDuration(
       (currentYear - birthYear),
@@ -217,15 +266,27 @@ class Age {
   }
 }
 
+///  Class used for getting duration till next birthday
 class NextBirthDay {
+  /// Birth Date
   final DateTime birthDateTime;
+
+  /// Current Date
   final DateTime currentDateTime;
 
+  /// Months left until the next birthday
   int inMonths = 0;
+
+  /// days left until the next birthday
   int inDays = 0;
+
+  /// Birth Day
   int get birthDay => birthDateTime.day;
+
+  /// Birth Month
   int get birthMonth => birthDateTime.month;
 
+  /// Constructor of NextBirthDay class with two required parameters
   NextBirthDay({required this.birthDateTime, required this.currentDateTime}) {
     int nextBirthYear = currentDateTime.year;
 
@@ -237,6 +298,7 @@ class NextBirthDay {
     }
 
     int months = nextBirthDate.month - currentDateTime.month;
+
     int days = nextBirthDate.day - currentDateTime.day;
 
     if (days < 0) {
@@ -256,7 +318,9 @@ class NextBirthDay {
 
     inMonths = months;
     inDays = days;
-    if (currentDateTime == birthDateTime) {
+
+    // if birthday and birthmonth is the same as currentday and currentmonth
+    if (inMonths == 0 && inDays == inMonths) {
       inMonths = 12;
       inDays = 0;
     }
