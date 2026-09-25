@@ -9,3 +9,7 @@
 - Improved API documentation comments
 - Added new test cases
 - Small bug fix in the actual logic of NextBirthDay
+
+## 1.0.2
+
+- Fixed a bug in the `Age` class that caused incorrect `remainingDays` and `days` calculations for same-year and cross-year scenarios.

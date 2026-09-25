@@ -84,7 +84,7 @@ String calculateMonthWeekRemainingdayDayHourMinuteSecondForSameYears(
 
   // print('total days $totalDays remaining days $remainingDays');
 
-  return "$durationInMonths $weeks $durationInDays $remainingDays $totalHours $totalMinutes $totalSeconds";
+  return "$durationInMonths $weeks $remainingDays $durationInDays $totalHours $totalMinutes $totalSeconds";
 }
 
 /// Method for calculating duration

@@ -295,7 +295,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     "Details",
                     style: TextStyle(
                       fontSize: 20,
-                      color: const Color.fromARGB(255, 255, 115, 34),
+                      color: Color.fromARGB(255, 255, 115, 34),
                     ),
                   ),
                   const SizedBox(height: 10),
