@@ -34,7 +34,7 @@ Add the following to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  age_birthday_and_date_calculator: ^1.0.0
+  age_birthday_and_date_calculator: ^1.0.2+1
 ```
 
 ## Usage 🧱

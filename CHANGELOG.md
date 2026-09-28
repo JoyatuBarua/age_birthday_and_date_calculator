@@ -13,3 +13,7 @@
 ## 1.0.2
 
 - Fixed a bug in the `Age` class that caused incorrect `remainingDays` and `days` calculations for same-year and cross-year scenarios.
+
+## 1.0.2+1
+
+- Updated installation dependencies mentioned inside readme according to the lastest 1.0.2 update.

@@ -1,6 +1,6 @@
 name: age_birthday_and_date_calculator
 description: "A lightweight flutter utility package to effortlessly calculate age, count duration between dates, and determine upcoming birthdays with precision."
-version: 1.0.2
+version: 1.0.2+1
 homepage: https://github.com/JoyatuBarua/age_birthday_and_date_calculator
 repository: https://github.com/JoyatuBarua/age_birthday_and_date_calculator.git
 topics:
